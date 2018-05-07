@@ -1,0 +1,61 @@
+databaseChangeLog:
+
+  - changeSet:
+      id: 1
+      author: KODAD
+      comment : "Creates table CUSTOMER"
+      changes:
+        - createTable:
+            tableName: customer
+            columns:   
+              - column:
+                  name: login
+                  type: varchar
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+                    
+  - changeSet:
+      id: 2
+      author: KODAD
+      comment : "Creates table ACCOUNT"
+      changes:
+        - createTable:
+            tableName: account
+            columns:
+              - column:
+                  name: id
+                  type: varchar
+                  constraints:
+                    primaryKey: true
+                    nullable: false 
+              - column:
+                  name: balance
+                  type: double
+                  constraints:
+                    primaryKey: false
+                    nullable: true
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                             

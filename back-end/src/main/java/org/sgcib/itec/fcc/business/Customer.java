@@ -1,13 +1,24 @@
 package org.sgcib.itec.fcc.business;
 
+import static javax.persistence.FetchType.LAZY;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.OneToMany;
+
+@Entity
 public class Customer {
 
-    private final String login;
-    private final List<Account> accounts = new ArrayList<>();
+	@Id
+	private String login;
+	
+	
+    @OneToMany(fetch = LAZY)
+	List<Account> accounts  = new ArrayList<>();
 
     public Customer(String login) {
         this.login = login;
@@ -25,4 +36,8 @@ public class Customer {
     public List<Account> getAccounts() {
         return accounts;
     }
+
+    public Customer() {
+    }
+    
 }

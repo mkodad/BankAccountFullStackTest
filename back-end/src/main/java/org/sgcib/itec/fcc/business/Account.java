@@ -1,9 +1,20 @@
 package org.sgcib.itec.fcc.business;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
+@Entity
 public class Account {
 
-    private final String id;
-    private double balance;
+
+	@Id
+	@Column(name="ID")
+	private String id;
+	
+	@Column(name="BALANCE")
+	private  double balance;
+    
 
     public Account(String id) {
         this.id = id;
@@ -24,5 +35,8 @@ public class Account {
 
     public void setBalance(double balance) {
         this.balance = balance;
+    }
+    
+    public Account() {
     }
 }

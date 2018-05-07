@@ -5,12 +5,7 @@ spring:
   application:
     login: Back-End Test
 
-    jpa:
-    hibernate.ddl-auto: validate
-    //hibernate.hbm2ddl.auto: validate
-    
 logging:
   level:
     org.springframework.web: WARN
     org.sgcib.itec.fcc: INFO
-

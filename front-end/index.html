@@ -2,32 +2,32 @@
 <html>
 <head>
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" type="text/css">
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.9/angular.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script src="./js/app.js"></script>
     <script src="./js/service.js"></script>
     <script src="./js/controller.js"></script>
+    <script src="./js/lib/ui-bootstrap-tpls-2.5.0.min.js"></script>
+    <script src="./js/lib/angular.min.js"></script>
     <title>Bank Account Test</title>
 </head>
 <body ng-app="app">
-<div ng-controller="testController" class="container">
-    <h3>{{title}}</h3>
+<div ng-controller="controller" class="container">
+    <h3>Bank Account Test</h3>
     <div class="row">
         <form>
             <div class="form-group">
                 <label for="Client">Client : </label>
-                <input type="text" class="form-control" id="Client">
+                <input type="text" ng-model="login" class="form-control" id="Client" placeholder="Enter your login"/>
             </div>
             <div class="form-group">
                 <label for="Account">Account : </label>
-                <input type="text" class="form-control" id="Account">
+                <input type="text" ng-model="account" id="account" class="form-control" placeholder="Enter your account."/>
             </div>
             <div class="form-group">
-                <button class="btn btn-default">Display</button>
+                <button type="button" ng-click="editBalance()" class="btn btn-default">Display</button>
             </div>
             <div class="form-group">
                 <label for="Balance">Balance : </label>
-                <input type="text" class="form-control" id="Balance" disabled>
+                <input type="text" ng-model="balanceResponse" id="ubalance" class="form-control" placeholder="return the balance of your account. If not exist return 0.0" disabled/>
             </div>
         </form>
     </div>
